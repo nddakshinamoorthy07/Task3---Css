@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stylish CSS Accordion</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #d0bba5, #747070);
+      padding: 3rem;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #444;
+    }
+
+    details {
+      background: #817d7d;
+      border-radius: 10px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    summary {
+      position: relative;
+      list-style: none;
+      padding: 1.2rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background-color: #f0f0f0;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s;
+    }
+
+    summary:hover {
+      background-color: #e2e2e2;
+    }
+
+    summary::marker {
+      display: none;
+    }
+
+    /* Custom arrow icon */
+    summary::after {
+      content: "▸";
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.3s ease;
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    details[open] summary::after {
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    details > div {
+      padding: 1rem 1.5rem;
+      background-color: #fafafa;
+      border-top: 1px solid #ddd;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Accordion Menu</h2>
+
+  <details>
+    <summary>Section 1: Introduction</summary>
+    <div>
+      <p>This is the content of section 1. It expands when you click the header. You can include text, links, or even images here.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Section 2: Features</summary>
+    <div>
+      <p>This is the content of section 2. It describes the features of your accordion, like responsiveness and accessibility.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Section 3: More Info</summary>
+    <div>
+      <p>This is the content of section 3. You can add as many sections as needed using the same structure.</p>
+    </div>
+  </details>
+
+</body>
+</html>
